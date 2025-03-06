@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A715134E-8F2C-48BE-B1E3-156D76237E10}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>NOTVPN</RootNamespace>
+    <AssemblyName>NOTVPN</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Group 760.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="customRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customRes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\AccountOk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\AccountOk.Designer.cs">
+      <DependentUpon>AccountOk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\AdvancedSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\AdvancedSetting.Designer.cs">
+      <DependentUpon>AdvancedSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Account.Designer.cs">
+      <DependentUpon>Account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MainFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\MainFrm.Designer.cs">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\SettingScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\SettingScreen.Designer.cs">
+      <DependentUpon>SettingScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\Verification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Verification.Designer.cs">
+      <DependentUpon>Verification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\WorkScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\WorkScreen.Designer.cs">
+      <DependentUpon>WorkScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BaseScreencontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Template\CircularProgressButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Template\CustomButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Template\CustomProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Template\RJTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Template\RJTextBox.Designer.cs">
+      <DependentUpon>RJTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Template\RoundedDigitTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Template\RoundedDigitTextBox.Designer.cs">
+      <DependentUpon>RoundedDigitTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Sep.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Template\StdOutWriter.cs" />
+    <Compile Include="Template\tunnelChannel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Template\tunnelChannel.Designer.cs">
+      <DependentUpon>tunnelChannel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\ConsoleHelper.cs" />
+    <Compile Include="Utils\LibHelper.cs" />
+    <Compile Include="Utils\UIHelper.cs" />
+    <None Include="libs\leaf.conf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\UK.png" />
+    <None Include="Resources\France.png" />
+    <None Include="Resources\uz.png" />
+    <None Include="Resources\ua.png" />
+    <None Include="Resources\ru.png" />
+    <None Include="Resources\pl 1.png" />
+    <None Include="Resources\cn.png" />
+    <None Include="Resources\Option.png" />
+    <None Include="Resources\ShieldPlus.png" />
+    <None Include="Resources\Group 2085655761.png" />
+    <None Include="Resources\Group 2085655758.png" />
+    <None Include="Resources\CloudSlash.png" />
+    <None Include="Resources\SwitchOn.png" />
+    <None Include="Resources\SwitchOff.png" />
+    <None Include="Resources\Switch-On.png" />
+    <None Include="Resources\Switch-Off.png" />
+    <None Include="Resources\Swap.png" />
+    <None Include="Resources\HardDrives.png" />
+    <None Include="Resources\Group 2085655724.png" />
+    <None Include="Resources\Group 2085655723.png" />
+    <None Include="Resources\Group 2085655722.png" />
+    <None Include="Resources\Group 2085655721.png" />
+    <None Include="Resources\Group 2085655720.png" />
+    <None Include="Resources\Globe.png" />
+    <None Include="Resources\Detective.png" />
+    <None Include="Resources\XCircle.png" />
+    <None Include="Resources\WindowsLogo.png" />
+    <None Include="Resources\Trash.png" />
+    <None Include="Resources\SignIn.png" />
+    <None Include="Resources\AppleLogo.png" />
+    <None Include="Resources\AndroidLogo.png" />
+    <None Include="Resources\Envelope1.png" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\Translate.png" />
+    <None Include="Resources\Preferences1.png" />
+    <None Include="Resources\star.png" />
+    <None Include="Resources\Icon.png" />
+    <None Include="Resources\UserCircle.png" />
+    <None Include="Resources\Chevron-left.png" />
+    <None Include="Resources\Group 2085655676.png" />
+    <None Include="Resources\Rectangle 52.png" />
+    <None Include="Resources\Power.png" />
+    <None Include="Resources\close.png" />
+    <None Include="app.manifest" />
+    <None Include="libs\wintun.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <EmbeddedResource Include="customRes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>customRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\AccountOk.resx">
+      <DependentUpon>AccountOk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\AdvancedSetting.resx">
+      <DependentUpon>AdvancedSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Account.resx">
+      <DependentUpon>Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\MainFrm.resx">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\SettingScreen.resx">
+      <DependentUpon>SettingScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Verification.resx">
+      <DependentUpon>Verification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\WorkScreen.resx">
+      <DependentUpon>WorkScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\RJTextBox.resx">
+      <DependentUpon>RJTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\RoundedDigitTextBox.resx">
+      <DependentUpon>RoundedDigitTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\tunnelChannel.resx">
+      <DependentUpon>tunnelChannel.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="libs\leaf.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="libs\leaf.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="libs\leaf.h" />
+    <Content Include="libs\test.conf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="libs\test.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShieldCheck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 755.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 756.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 757.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 759.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 760.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 761.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2085655799.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2085655801.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2085655803.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2085655804.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2085655805.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 7601.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2085655713.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShieldCheck1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2085655715.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2085655716.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Envelope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MagnifyingGlassPlus1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Germany.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2085655854.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheckCircle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 712.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Preferences.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Switch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2085655865.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2085655864.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2085655867.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2085655866.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 726.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Group 760.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

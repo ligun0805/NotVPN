@@ -1,0 +1,110 @@
+{
+  "log": {
+    "level": "info"
+  },
+  "dns": {
+    "servers": [
+      "8.8.8.8",
+      "1.1.1.1"
+    ]
+  },
+  "inbounds": [
+    {
+      "protocol": "tun",
+      "tag": "tun-in",
+      "settings": {
+        "name": "MyTun",
+        "address": "10.8.8.2",
+        "netmask": "255.255.255.0",
+        "gateway": "10.8.8.1",
+        "mtu": 1500,
+        "dnsServers": [
+          "8.8.8.8",
+          "8.8.4.4"
+        ],
+        "wintun": "libs\\wintun.dll",
+        "fakeDnsInclude": [ "*" ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "chain",
+      "settings": {
+        "actors": [
+          "vless_tls",
+          "vless_ws",
+          "vless"
+        ]
+      },
+      "tag": "proxy"
+    },
+    {
+      "tag": "vless_tls",
+      "protocol": "tls",
+      "settings": {
+        "serverName": "kjehjeio4jss48s.ditchyourip.com"
+      }
+    },
+    {
+      "tag": "vless_ws",
+      "protocol": "ws",
+      "settings": {
+        "path": "/ws/"
+      }
+    },
+    {
+      "protocol": "vless",
+      "settings": {
+        "uuid": "54a6ef6a-c11d-54e7-9c7f-643d36896fdd",
+        "address": "195.238.125.123",
+        "port": 8443,
+        "security": "chacha20-ietf-poly1305"
+      },
+      "tag": "vless"
+    },
+    {
+      "protocol": "direct",
+      "tag": "direct_out"
+    },
+    {
+      "protocol": "drop",
+      "tag": "drop_out"
+    }
+  ],
+  "router": {
+    "domainResolve": true,
+    "rules": [
+      {
+        "ip": [
+          "0.0.0.0/8",
+          "10.0.0.0/8",
+          "100.64.0.0/10",
+          "172.16.0.0/12",
+          "192.0.0.0/24",
+          "192.168.0.0/16",
+          "224.0.0.0/4",
+          "240.0.0.0/4",
+          "255.255.255.255/32",
+          "224.0.0.0/3",
+          "208.54.0.0/16",
+          "129.192.166.0/24",
+          "109.249.0.0/16",
+          "68.31.26.0/24",
+          "141.207.0.0/16",
+          "217.116.96.0/20"
+        ],
+        "target": "direct_out"
+      },
+      {
+        "domainKeyword": [
+          "app-wizard.io",
+          "link.app-wizard.io",
+          "geojs.io",
+          "get.geojs.io"
+        ],
+        "target": "direct_out"
+      }
+    ]
+  }
+}

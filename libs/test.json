@@ -1,0 +1,35 @@
+{
+    "log": {
+        "level": "info"
+    },
+    "dns": {
+        "servers": [
+            "1.1.1.1"
+        ]
+    },
+    "inbounds": [
+        {
+            "protocol": "tun",
+            "tag": "tun-in",
+          "settings": {
+            "name": "MyTun",
+            "address": "10.8.8.2",
+            "netmask": "255.255.255.0",
+            "gateway": "10.8.8.1",
+            "mtu": 1500,
+            "dnsServers": [
+              "8.8.8.8",
+              "8.8.4.4"
+            ],
+            "wintun": "libs\\wintun.dll",
+            "fakeDnsInclude": [ "*" ]
+          }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "direct",
+            "tag": "direct-out"
+        }
+    ]
+}
